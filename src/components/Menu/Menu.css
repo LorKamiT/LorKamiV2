@@ -1,0 +1,355 @@
+@font-face {
+  font-family: "RDRTitulos";
+  src: url("../../../public/fonts/RDRLinoNormal.woff2");
+  /* font-family: 'RDRTitulos', sans-serif; */
+}
+
+body.dark-mode {
+  background-color: #0f1214;
+  color: #f0f0f0;
+}
+
+.SeccionDeCargaDeComponentes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  min-height: calc(100vh - 4rem);
+}
+
+.SeccionDeCargaDeComponentes.dark {
+  background-color: #0f1214;
+  color: #fff;
+}
+
+.MonitorSec {
+  background-color: white;
+}
+
+.MonitorSec.dark {
+  background-color: #0f1214;
+}
+
+.MenuBoxHamburger.dark {
+  color: #fff;
+}
+
+.MenuDesplegadoBox.dark {
+  background-color: #0f1214;
+  color: #fff;
+}
+
+.MenuSeccion.dark {
+  color: #fff;
+}
+
+.MenuSeccion {
+  z-index: 100;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 4rem;
+  top: 0;
+  /* border: 1px solid red; */
+}
+
+.MenuBox {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid purple; */
+}
+
+.MenuBoxInterno {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+
+.MenuBoxLogoSwitch {
+  display: flex;
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 20px;
+  /* border: 1px solid black; */
+}
+
+.MenuBoxLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+
+.MenuBoxLogo img {
+  display: flex;
+  height: 100%;
+  width: auto;
+}
+
+.MenuBoxSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  /* border: 1px solid red; */
+}
+
+.MenuBoxHamburger {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 20px;
+  /* border: 1px solid purple; */
+}
+
+.MenuDesplegadoBox {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  transform: translateY(-100%) rotate3d(0) scale(0);
+  transition: transform 0.6s ease-in-out, opacity 1s ease-in-out;
+  opacity: 0;
+  display: none;
+  overflow: hidden;
+  /* border: 1px solid red; */
+}
+
+.MenuDesplegadoBox.animate-in {
+  transform: translateY(0) translateX(0) rotate3d(0) scale(1);
+  opacity: 1;
+  display: flex !important;
+}
+
+.MenuDesplegadoBox.animate-out {
+  transform: translateY(-100%) translateX(50%) rotate3d(1, 1, 1, 45deg) scale(0);
+  opacity: 0;
+  display: flex !important;
+}
+
+.MenuDesplegadoIndice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 50%;
+  height: 100%;
+  margin-right: 2rem;
+  /* border: 1px solid blue; */
+}
+
+.MenuImagenCambiante {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+  height: auto;
+}
+
+.MenuImagenCambiante img {
+  display: flex;
+  height: 100vh;
+  width: auto;
+  transition: opacity 0.3s ease;
+}
+
+.MenuIndice {
+  display: flex;
+  position: relative;
+  text-transform: uppercase;
+  transition: all 0.25s ease-in-out;
+  overflow: hidden;
+  align-items: center;
+  height: 9rem;
+  /* border: 1px solid blue; */
+}
+
+.MenuIndiceSecu {
+  display: flex;
+  position: relative;
+  text-transform: uppercase;
+  align-items: center;
+  height: auto;
+  margin-right: 2rem;
+  /* border: 1px solid blue; */
+}
+
+.MenuIndiceSecu.Mobile {
+  display: none;
+}
+
+.MenuDesplegadoIndice a {
+  text-decoration: none;
+  color: inherit;
+  font-family: "RDRTitulos", sans-serif;
+}
+
+.MenuIndice span {
+  font-size: 10rem;
+  text-rendering: optimizeLegibility;
+  text-transform: uppercase;
+  letter-spacing: 1.5rem;
+}
+
+.MenuIndiceSecu span {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.1rem;
+}
+
+.MenuIndiceSecu span:hover {
+  color: #818181;
+}
+
+.AnimSube {
+  display: inline-block;
+  white-space: nowrap;
+  transition: all 0.4s ease;
+  transform-origin: center center;
+}
+
+.AnimBaja {
+  position: absolute;
+  transform: translateY(1em) rotateX(90deg);
+  transition: all 0.4s ease;
+}
+
+.MenuIndice:hover .AnimSube {
+  transform: translateY(-0.5em) rotateX(90deg);
+}
+
+.MenuIndice:hover .AnimBaja {
+  transform: translateY(0) rotateX(0deg);
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(35px);
+}
+
+.VentanaReproductorMusica {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  width: auto;
+  height: auto;
+  /* border: 1px solid yellow; */
+}
+
+.VentanaReproductorMusicaCaja {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid yellow; */
+}
+
+.BtnArriba {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  opacity: 0;
+  transition: all 0.7s ease-in-out;
+  margin: 1rem;
+  z-index: 98;
+  transform: scale(0) rotate(90deg);
+}
+
+.BtnArriba.show:active {
+  transition: all 0.01s ease-in-out;
+  transform: scale(0.9) rotate(-80deg);
+}
+.BtnArriba.show.dark:active {
+  transition: all 0.01s ease-in-out;
+  transform: scale(0.9) rotate(-80deg);
+}
+
+.BtnArriba.show {
+  cursor: pointer;
+  opacity: 1;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
+  transform: scale(1) rotate(-90deg);
+}
+
+.BtnArriba.show.dark {
+  opacity: 1;
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  background-color: #333333;
+  transform: scale(1) rotate(-90deg);
+}
+
+@media screen and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+  .MenuImagenCambiante {
+    display: none;
+    width: 0%;
+    height: 0%;
+  }
+  .MenuDesplegadoIndice {
+    width: 100%;
+    height: 100%;
+    margin-right: 0rem;
+  }
+  .MenuIndice {
+    height: 6rem;
+  }
+  .MenuIndice span {
+    font-size: 7rem;
+    letter-spacing: 1.5rem;
+  }
+
+  .MenuIndiceSecu span {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .VentanaReproductorMusica {
+    display: none;
+  }
+  .MenuIndiceSecu.Mobile {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 375px) {
+}
+
+@media screen and (max-width: 320px) {
+  .MenuIndice span {
+    font-size: 6rem;
+    letter-spacing: 1rem;
+  }
+
+  .MenuIndiceSecu span {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+  }
+}

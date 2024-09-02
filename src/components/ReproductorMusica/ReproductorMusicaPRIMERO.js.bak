@@ -1,0 +1,220 @@
+import React, { useState, useRef, useEffect } from "react";
+import "./ReproductorMusica.css";
+import { songsdata } from "./audiosapp";
+import {
+  FaPlay,
+  FaPause,
+  FaStepForward,
+  FaStepBackward,
+  FaVolumeUp,
+  FaVolumeMute,
+  FaVolumeDown,
+  FaList,
+} from "react-icons/fa";
+import { FaRadio } from "react-icons/fa6";
+import { ImMinus } from "react-icons/im";
+
+const ReproductorMusicah = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
+  const [volume, setVolume] = useState(0.05); // Volumen predeterminado al 5%
+  const [volumeDisplay, setVolumeDisplay] = useState(""); // Mostrar porcentaje de volumen
+  const [isVolumeVisible, setIsVolumeVisible] = useState(false); // Visibilidad de la barra de volumen
+  const [isMuted, setIsMuted] = useState(false); // Estado de mute
+  const [previousVolume, setPreviousVolume] = useState(volume); // Almacenar volumen previo al mute
+
+  const audioRef = useRef(null);
+
+  const togglePlayPause = () => {
+    setIsPlaying(!isPlaying);
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+  };
+
+  const expandPlayer = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    const updateTime = () => setCurrentTime(audio.currentTime);
+    audio.addEventListener("timeupdate", updateTime);
+
+    return () => audio.removeEventListener("timeupdate", updateTime);
+  }, []);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    const updateDuration = () => setDuration(audio.duration);
+    audio.addEventListener("loadedmetadata", updateDuration);
+
+    return () => audio.removeEventListener("loadedmetadata", updateDuration);
+  }, []);
+
+  const handleTimeChange = (event) => {
+    const newTime = event.target.value;
+    audioRef.current.currentTime = newTime;
+    setCurrentTime(newTime);
+  };
+
+  const playNextSong = () => {
+    const nextIndex = (currentSongIndex + 1) % songsdata.length;
+    setCurrentSongIndex(nextIndex);
+  };
+
+  const playPrevSong = () => {
+    const prevIndex =
+      (currentSongIndex - 1 + songsdata.length) % songsdata.length;
+    setCurrentSongIndex(prevIndex);
+  };
+
+  useEffect(() => {
+    if (isPlaying) {
+      audioRef.current.play();
+    }
+  }, [currentSongIndex]);
+
+  const handleVolumeChange = (event) => {
+    const newVolume = event.target.value;
+    audioRef.current.volume = newVolume;
+    setVolume(newVolume);
+    setIsMuted(false); // Desactivar mute cuando se mueve la barra de volumen
+    setVolumeDisplay(`${Math.round(newVolume * 100)}%`);
+
+    // Ocultar display de volumen después de 1 segundo
+    setTimeout(() => {
+      setVolumeDisplay("");
+    }, 1000);
+  };
+
+  const toggleMute = () => {
+    if (isMuted) {
+      // Restaurar el volumen previo al mute
+      audioRef.current.volume = previousVolume;
+      setVolume(previousVolume);
+    } else {
+      // Guardar el volumen actual y poner en mute
+      setPreviousVolume(volume);
+      audioRef.current.volume = 0;
+      setVolume(0);
+    }
+    setIsMuted(!isMuted);
+  };
+
+  const showVolumeControl = () => {
+    setIsVolumeVisible(true);
+  };
+
+  const hideVolumeControl = () => {
+    setIsVolumeVisible(false);
+  };
+
+  const getVolumeIcon = () => {
+    if (isMuted || volume === 0) {
+      return <FaVolumeMute />;
+    } else if (volume <= 0.66) {
+      return <FaVolumeDown />;
+    } else {
+      return <FaVolumeUp />;
+    }
+  };
+
+  return (
+    <div className={`music-player ${isExpanded ? "expanded" : ""}`}>
+      {!isExpanded && (
+        <div className="audio-waves-icon" onClick={expandPlayer}>
+          <div className={`wave ${isPlaying ? "playing" : ""}`}></div>
+          <div className={`wave2 ${isPlaying ? "playing" : ""}`}></div>
+          <div className={`wave3 ${isPlaying ? "playing" : ""}`}></div>
+          <div className={`wave2 ${isPlaying ? "playing" : ""}`}></div>
+          <div className={`wave ${isPlaying ? "playing" : ""}`}></div>
+        </div>
+      )}
+      {isExpanded && (
+        <div className="player-controls">
+          <div className="song-info">
+            <img
+              src={songsdata[currentSongIndex].musicimage}
+              alt="cover"
+              className="cover"
+            />
+            <div>
+              <p>{songsdata[currentSongIndex].title}</p>
+              <p>{songsdata[currentSongIndex].artist}</p>
+            </div>
+          </div>
+          <div className="controls">
+            <button onClick={playPrevSong}>
+              <FaStepBackward />
+            </button>
+            <button onClick={togglePlayPause}>
+              {isPlaying ? <FaPause /> : <FaPlay />}
+            </button>
+            <button onClick={playNextSong}>
+              <FaStepForward />
+            </button>
+            <button>
+              <FaList />
+            </button>
+            <button>
+              <FaRadio />
+            </button>
+            <div
+              className="volume-control"
+              onMouseEnter={showVolumeControl}
+              onMouseLeave={hideVolumeControl}
+            >
+              <button onClick={toggleMute}>{getVolumeIcon()}</button>
+              {isVolumeVisible && (
+                <input
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  value={volume}
+                  onChange={handleVolumeChange}
+                />
+              )}
+            </div>
+          </div>
+          <input
+            type="range"
+            min="0"
+            max={duration}
+            value={currentTime}
+            onChange={handleTimeChange}
+          />
+          <div className="time-info">
+            <span>{formatTime(currentTime)}</span>
+            <span>{formatTime(duration)}</span>
+          </div>
+        </div>
+      )}
+      <audio ref={audioRef} src={songsdata[currentSongIndex].url}></audio>
+      {isExpanded && (
+        <button className="minimize-icon" onClick={expandPlayer}>
+          <ImMinus />
+        </button>
+      )}
+      {volumeDisplay && (
+        <span className="volume-display" style={{ left: volumeDisplay.left }}>
+          {volumeDisplay}
+        </span>
+      )}
+    </div>
+  );
+};
+
+const formatTime = (time) => {
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+};
+
+export default ReproductorMusicah;

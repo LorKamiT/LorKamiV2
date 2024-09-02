@@ -1,0 +1,77 @@
+.menu {
+  list-style-type: none;
+  padding: 0;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+
+.Contenedor-Menu-Guias.dark {
+  background-color: #0f1214;
+}
+
+.menu-item h3 {
+  cursor: pointer;
+  color: #090b0b;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+.Contenedor-Menu-Guias.dark h3 {
+  color: white;
+}
+
+.menu-item ul {
+  padding-left: 15px;
+}
+
+.menu-item ul li {
+  cursor: pointer;
+  padding: 10px 15px;
+  color: #090b0b;
+  font-size: 0.8rem;
+  font-weight: 500;
+  list-style: none;
+  border-left: 1px solid #e8eaee;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-item ul li.dark {
+  color: #b6bec9;
+}
+
+.Contenedor-Menu-Guias.dark ul li {
+  color: #b6bec9;
+  border-left: 1px solid rgb(29, 33, 38);
+}
+
+.menu-item ul li.active {
+  background-color: #ebf5ff;
+  color: #006bd6;
+  border-left: 1px solid #3399ff;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-item ul li.active:hover {
+  background-color: #d6ebff;
+  color: #006bd6;
+  border-left: 1px solid #3399ff;
+}
+
+.menu-item ul li.active.dark {
+  background-color: #1d2126;
+  color: #66b3ff;
+  border-left: 1px solid #3399ff;
+}
+
+.menu-item ul li:hover {
+  background-color: #f6f7f8;
+  color: #090b0b;
+  border-left: 1px solid rgb(29, 33, 38);
+  transform: translateX(2px);
+}
+.menu-item.dark ul li:hover {
+  background-color: #14181b;
+  color: white;
+  transform: translateX(2px);
+}

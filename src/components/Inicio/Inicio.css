@@ -1,0 +1,71 @@
+.SeccionInicio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 4rem);
+}
+
+.InicioCaja {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 7rem;
+}
+
+.InicioCaja h1 {
+  color: black;
+}
+
+.InicioCaja.dark h1 {
+  color: white;
+}
+
+@font-face {
+  font-family: "Kablammo";
+  src: url("https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/Kablammo%5BMORF%5D.woff2")
+      format("woff2"),
+    url("https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/Kablammo%5BMORF%5D.ttf")
+      format("truetype");
+}
+
+@keyframes morph {
+  50% {
+    font-variation-settings: "MORF" 60;
+  }
+}
+
+@layer demo {
+  h1 {
+    font-family: "Kablammo";
+    font-variation-settings: "MORF" 0;
+    font-size: 7rem;
+    animation: morph 10s linear infinite;
+    text-align: center;
+    line-height: 1;
+
+    > span {
+      font-size: 2em;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 425px) {
+  .InicioCaja h1 {
+    font-size: 4.3rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+}
+
+@media screen and (max-width: 320px) {
+}

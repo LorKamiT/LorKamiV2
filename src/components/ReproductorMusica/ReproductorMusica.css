@@ -1,0 +1,515 @@
+/* Estilo para el reproductor expandido */
+.music-player {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  transition: all 0.5s ease-in-out;
+  margin: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.music-player.dark {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.music-player.expanded {
+  width: 230px;
+  height: 250px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  border-top-left-radius: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.music-player.expanded.dark {
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilo para el ícono de minimizar */
+.minimize-icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -27px;
+  right: 0px;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgb(0, 0, 0);
+  color: #333;
+  border-radius: 50px;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  /* border: 1px solid red; */
+}
+
+.minimize-icon.dark {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgb(255, 255, 255);
+  color: #ffffff;
+}
+
+.minimize-icon:hover {
+  background-color: rgba(224, 224, 224, 0.8);
+}
+
+.minimize-icon.dark:hover {
+  background-color: rgba(77, 77, 77, 0.8);
+}
+
+.audio-waves-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.audio-waves-icon.dark {
+  background-color: #333333;
+}
+
+.wave,
+.wave2,
+.wave3 {
+  width: 3px;
+  height: 20px;
+  margin: 2px;
+  background-color: #000;
+  display: inline-block;
+  animation: waveAnimation 1.2s infinite ease-in-out;
+  animation-play-state: paused;
+}
+
+.audio-waves-icon.dark .wave,
+.audio-waves-icon.dark .wave2,
+.audio-waves-icon.dark .wave3 {
+  background-color: #ffffff;
+}
+
+.wave {
+  height: 15px;
+  animation-delay: -1.4s;
+}
+
+.wave2 {
+  height: 20px;
+  animation-delay: -1.2s;
+}
+
+.wave3 {
+  height: 25px;
+  animation-delay: -1s;
+}
+
+.wave.playing,
+.wave2.playing,
+.wave3.playing {
+  animation-play-state: running;
+}
+
+.volume-tooltip {
+  background-color: #444444;
+}
+
+@keyframes waveAnimation {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.3);
+  }
+}
+
+.containermusicapp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+.containermusicapp svg {
+  color: black;
+}
+
+.containermusicapp.dark svg {
+  color: #ffffff;
+}
+
+.overlaymusicapp {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* border: 1px solid white; */
+}
+
+.controlsmusicapp {
+  display: flex;
+  width: 100%;
+  height: 10%;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 1rem;
+  /* border: 1px solid purple; */
+}
+
+.control-group {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+  /* border: 1px solid yellow; */
+}
+
+.imageApp-container {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.ImageApp {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ImageApp img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 10px;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height: 30%;
+  gap: 0rem;
+  padding: 0;
+  margin: 0;
+  /* border: 1px solid #00d9ff; */
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 115;
+  bottom: 40%;
+  right: 0%;
+  /* background-color: #2a2a2a; */
+  background-color: white;
+  border-radius: 10px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  display: none;
+  width: 90%;
+  height: auto;
+  border: 1px solid black;
+  /* border: 1px solid red; */
+}
+
+.tooltip.dark {
+  background-color: #000000;
+  border: 1px solid white;
+}
+
+.tooltip-visible {
+  background-color: #ffffff;
+  color: black;
+}
+
+.tooltip-visible.dark {
+  color: white;
+  background-color: #000000;
+}
+
+.TitleSongMenu {
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.2rem;
+  /* border: 1px solid yellow; */
+}
+
+.TitleSongMenu:hover {
+  background-color: #dadada;
+}
+.TitleSongMenu.dark:hover {
+  background-color: #242424;
+}
+
+.tooltip-visible {
+  display: block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  max-height: 10rem;
+  overflow-y: auto;
+  color: rgb(0, 0, 0);
+  /* border: 1px solid yellow; */
+}
+
+.titlemusica {
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+  font-size: 0.7rem;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+
+.TitleMusicaTitle {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+.TitleMusicaTitle.dark {
+  font-weight: 500;
+  color: white;
+}
+
+.TitleMusicaArtist.dark {
+  font-size: 0.6rem;
+  color: #888;
+  margin: 0;
+}
+
+.TitleMusicaArtist {
+  font-size: 0.6rem;
+  color: rgb(66, 66, 66);
+  margin: 0;
+}
+
+.slidermusicapp {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /* background-color: red; */
+  /* border: 1px solid beige; */
+}
+
+.SliderBoxTime {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid blue; */
+}
+
+.SliderBoxmusicapp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+.volume-control {
+  display: flex;
+  justify-content: center;
+  width: 13%;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+
+.volume-tooltip {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 17%;
+  right: 0%;
+  width: 10rem;
+  height: 2rem;
+  /* transform: rotate(-90deg); */
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 0.5rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+  border: 1px solid black;
+  /* border: 1px solid purple; */
+}
+
+.volume-tooltip.dark {
+  background-color: rgba(15, 15, 15, 0.95);
+  border: 1px solid white;
+}
+
+.volume-tooltip-visible {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid yellow; */
+}
+
+.volume-percentage {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  margin-top: -0.7rem;
+  /* border: 1px solid red; */
+  font-size: 0.7rem;
+  color: #949ba4;
+}
+
+.time-info-controller {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+
+.time-info {
+  display: flex;
+  cursor: default;
+  width: 100%;
+  justify-content: space-between;
+  color: #2b2b2b;
+  font-size: 0.7rem;
+  /* border: 1px solid yellow; */
+}
+
+.time-info.dark {
+  color: #888;
+}
+
+.btn-vol {
+  cursor: pointer;
+  /* color: white; */
+  margin: 0.2rem;
+  /* background-color: rgba(78, 82, 88, 0); */
+  transition: 0.1s ease-in-out;
+}
+
+.btn-vol:hover {
+  /* background-color: rgb(78, 82, 88); */
+  border-radius: 0.3rem;
+  margin: 0.2rem;
+}
+
+@media screen and (max-width: 425px) {
+  .TitleMusicaTitle {
+    font-size: 1.4rem;
+  }
+  .TitleMusicaArtist {
+    font-size: 0.8rem;
+  }
+  .TitleMusicaArtist.dark {
+    font-size: 0.8rem;
+  }
+  .time-info {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .btnplay svg {
+    width: 5rem;
+    height: 5rem;
+  }
+  .btnmenu svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .btnvolumen svg {
+    width: 3rem;
+    height: 3rem;
+  }
+  .tooltip-visible {
+    display: block;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    max-height: 21rem;
+  }
+  .TitleSongMenu {
+    font-size: 1.2rem;
+    margin: 0.6rem;
+  }
+  .TitleSongMenu:hover {
+    background-color: #36363600;
+  }
+  .btn-vol:hover {
+    border-radius: 0rem;
+    margin: 0rem;
+  }
+  .music-player {
+    margin: 0rem;
+  }
+  .music-player.expanded {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    border-radius: 0px;
+    border-top-left-radius: 0px;
+    border: 0px solid transparent;
+  }
+  .minimize-icon {
+    display: none;
+  }
+  .music-player.expanded.dark {
+    display: block;
+    border: 0px solid transparent;
+  }
+  .tooltip {
+    bottom: 30%;
+    right: 0%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .btnplay svg {
+    width: 4rem;
+    height: 4rem;
+  }
+  .btnmenu svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}

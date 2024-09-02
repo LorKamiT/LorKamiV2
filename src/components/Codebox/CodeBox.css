@@ -1,0 +1,109 @@
+.codebox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 0;
+  color: #000000;
+}
+
+.CodeBoxError {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%;
+  height: auto;
+  padding: 0rem;
+  border-radius: 5px;
+  background-color: #fdeded;
+  color: #5f2120;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0px 20px;
+}
+
+.CodeBoxError.dark {
+  background-color: #160b0b;
+  color: #dcb3b3;
+}
+
+.CodeBoxError svg {
+  padding: 0px 4px;
+  color: #d74141;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.CodeBoxError.dark svg {
+  color: #de3d32;
+}
+
+.tabs {
+  display: flex;
+  background-color: #252526;
+  border-bottom: 1px solid #333;
+}
+
+.tabs button {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background: none;
+  color: #cccccc;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  gap: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tabs button.active {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.tabs button:hover:not(.active) {
+  background-color: #333;
+}
+
+pre {
+  margin: 0;
+  padding: 0;
+  background-color: #1e1e1e;
+  color: #dcdcdc;
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+  overflow-x: auto;
+  /* border: 1px solid red; */
+}
+
+.codebox pre code {
+  display: block;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.codebox button.copy-button {
+  background-color: #292929;
+  color: #aaaaaa;
+  padding: 5px 10px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+}
+
+.codebox button.copy-button:hover {
+  background-color: #333;
+  color: #ffffff;
+}

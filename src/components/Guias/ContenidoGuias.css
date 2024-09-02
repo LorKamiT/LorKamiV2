@@ -1,0 +1,254 @@
+.guide-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  padding: 0px;
+  overflow-x: hidden;
+  /* border: 1px solid rgb(0, 255, 255); */
+}
+
+.timeline {
+  position: relative;
+  margin: 20px 0;
+  padding: 20px 0;
+  list-style-type: none;
+  /* border: 1px solid red; */
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  width: 3px;
+  background: #e8eaee;
+}
+
+.timeline.dark::before {
+  background: rgb(29, 33, 38);
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-icon {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  font-size: 0.8rem;
+  font-weight: 800;
+  left: 1.7%;
+  top: 0;
+  z-index: 1;
+}
+
+.timeline-title {
+  color: black;
+}
+
+.timeline-title.dark {
+  color: white;
+}
+
+.timeline-icon.dark {
+  background-color: #0f1214;
+  color: white;
+  border: 1px solid white;
+}
+
+.timeline-content {
+  margin-left: 60px;
+  padding: 20px;
+  border-radius: 5px;
+  width: calc(100% - 110px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  color: black;
+}
+
+.timeline-content.dark {
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+}
+
+.timeline-content img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+  height: auto;
+  display: block;
+}
+
+.Secciones-Guias {
+  color: black;
+  border-bottom: 3px solid #e8eaee;
+}
+
+.Secciones-Guias.dark {
+  color: rgb(255, 255, 255);
+  border-bottom: 3px solid rgb(29, 33, 38);
+}
+
+.CodeBox-Guias {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+.Caja-Advertencia {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%;
+  height: auto;
+  padding: 0rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0px 10px;
+  gap: 4px;
+}
+
+.Verde {
+  background-color: #edf7ed;
+  border-radius: 5px;
+  color: #1e4620;
+}
+.Verde.dark {
+  background-color: #0c130d;
+  border-radius: 5px;
+  color: #cce8cd;
+}
+.Azul {
+  background-color: #e5f6fd;
+  border-radius: 5px;
+  color: #014361;
+}
+.Azul.dark {
+  background-color: #071318;
+  border-radius: 5px;
+  color: #b8e7fb;
+}
+.Amarillo {
+  background-color: #fff4e5;
+  border-radius: 5px;
+  color: #694004;
+}
+.Amarillo.dark {
+  background-color: #191207;
+  border-radius: 5px;
+  color: #fcdfb5;
+}
+.Rojo {
+  border-radius: 5px;
+  background-color: #fdeded;
+  color: #5f2120;
+}
+.Rojo.dark {
+  background-color: #160b0b;
+  color: #dcb3b3;
+}
+
+.Verde svg {
+  color: #408944;
+}
+.Verde.dark svg {
+  color: #5dab61;
+}
+.Azul svg {
+  color: #1893d5;
+}
+.Azul.dark svg {
+  color: #26a6e0;
+}
+.Amarillo svg {
+  color: #ef7918;
+}
+.Amarillo.dark svg {
+  color: #e89923;
+}
+.Rojo svg {
+  color: #d74141;
+}
+.Rojo.dark svg {
+  color: #de3d32;
+}
+
+.Caja-Advertencia svg {
+  padding: 0px 4px;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.Caja-Descarga {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  /* border: 1px solid red; */
+}
+
+.Caja-Descarga a {
+  text-decoration: none;
+}
+
+.Caja-Descarga svg {
+  padding: 0px 4px;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.Caja-Descarga button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  gap: 4px;
+  border-radius: 5px;
+  font-weight: 700;
+  color: white;
+  background-color: #1871cc;
+  border: 0px;
+  padding: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.Caja-Descarga button:hover {
+  background-color: #1258a8;
+}
+.Caja-Descarga.dark button:hover {
+  background-color: #42a5f5;
+}
+
+.Caja-Descarga.dark button {
+  color: #091520;
+  background-color: #82c3f8;
+  border: 0px;
+}
