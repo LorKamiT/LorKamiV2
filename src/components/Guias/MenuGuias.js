@@ -33,15 +33,15 @@ const MenuGuias = ({ toggleMenu, darkMode }) => {
     {
       title: "Crear proyecto en VsCode",
       subtitles: [
-        { title: "React JS Native", sectionId: "section1" },
-        { title: "Next JS", sectionId: "section2" },
+        { title: "React JS Native", sectionId: "seccion1" },
+        { title: "Next JS", sectionId: "seccion2" },
       ],
     },
     {
-      title: "Titulo",
+      title: "Deployar pagina",
       subtitles: [
-        { title: "Titulo", sectionId: "section3" },
-        { title: "Titulo", sectionId: "section4" },
+        { title: "Github", sectionId: "seccion3" },
+        { title: "Vercel", sectionId: "seccion4" },
       ],
     },
   ];

@@ -29,7 +29,9 @@ const Guias = ({ darkMode }) => {
         </div>
       </div>
       <div
-        className={`hamburger-menu ${isMenuOpen ? "open" : ""}`}
+        className={`hamburger-menu ${isMenuOpen ? "open" : ""} ${
+          darkMode ? "dark" : ""
+        }`}
         onClick={toggleMenu}
       >
         <Hamburger />
