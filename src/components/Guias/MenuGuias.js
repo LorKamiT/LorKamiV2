@@ -44,6 +44,17 @@ const MenuGuias = ({ toggleMenu, darkMode }) => {
         { title: "Vercel", sectionId: "seccion4" },
       ],
     },
+    {
+      title: "Codigos mas usados",
+      subtitles: [
+        { title: "Metadatos", sectionId: "seccion5" },
+        { title: "Font personalizada", sectionId: "seccion6" },
+        { title: "Scrollbar", sectionId: "seccion7" },
+        { title: "Responsive", sectionId: "seccion8" },
+        { title: "Magick", sectionId: "seccion9" },
+        { title: "PowerToys", sectionId: "seccion10" },
+      ],
+    },
   ];
 
   const handleClick = (sectionId) => {

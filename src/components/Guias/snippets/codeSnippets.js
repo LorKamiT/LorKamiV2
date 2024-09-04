@@ -156,6 +156,254 @@ git pull
     },
   },
 
+  CodigoInstalarVercel: {
+    consola: {
+      title: "Consola VSCode",
+      icon: <VscDebugConsole style={{ color: "#f6f7f8" }} />,
+      code: `npm install -g vercel
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+vercel login
+Set-ExecutionPolicy -ExecutionPolicy Restricted -Scope CurrentUser
+
+`,
+    },
+  },
+
+  CodigoInstalarVercelbConCodigoExtra: {
+    consola: {
+      title: "Consola VSCode",
+      icon: <VscDebugConsole style={{ color: "#f6f7f8" }} />,
+      code: `Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+vercel
+Set-ExecutionPolicy -ExecutionPolicy Restricted -Scope CurrentUser
+
+`,
+    },
+  },
+
+  CodigoDeployarVercelbConCodigoExtra: {
+    consola: {
+      title: "Consola VSCode",
+      icon: <VscDebugConsole style={{ color: "#f6f7f8" }} />,
+      code: `Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+vercel --prod
+Set-ExecutionPolicy -ExecutionPolicy Restricted -Scope CurrentUser
+`,
+    },
+  },
+
+  MetadatosEdicionRapida: {
+    html: {
+      title: "index.html (Edición rapida)",
+      icon: <FaHtml5 style={{ color: "#e65100" }} />,
+      code: `<head>
+<meta charset="utf-8" />
+<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#000000" />
+<link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
+<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+<title>CHANGE</title>
+<meta name="twitter:title" content="CHANGE">
+<meta property="og:title" content="CHANGE">
+
+<meta name="description" content="CHANGE"/>
+<meta name="twitter:description" content="CHANGE">
+<meta property="og:description" content="CHANGE">
+
+<meta name="twitter:site" content="@CHANGE">
+<meta name="twitter:image" content="https://CHANGE.xyz/card.png">
+<meta property="og:url" content="https://CHANGE.xyz">
+<meta property="og:image" content="https://CHANGE.xyz/card.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+</head>
+`,
+    },
+  },
+
+  MetadatosEdicionOrganizada: {
+    html: {
+      title: "index.html (Organizado)",
+      icon: <FaHtml5 style={{ color: "#e65100" }} />,
+      code: `<head>
+<meta charset="utf-8" />
+<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#000000" />
+<meta name="description" content="CHANGE"/>
+<link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
+<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+<title>CHANGE</title>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@CHANGE">
+<meta name="twitter:title" content="CHANGE">
+<meta name="twitter:description" content="CHANGE">
+<meta name="twitter:image" content="https://CHANGE.xyz/card.png">
+
+<meta property="og:title" content="CHANGE">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://CHANGE.xyz">
+<meta property="og:image" content="https://CHANGE.xyz/card.png">
+<meta property="og:description" content="CHANGE">
+</head>
+`,
+    },
+  },
+
+  FontPersonalizada: {
+    css: {
+      title: "App.css",
+      icon: <FaCss3 style={{ color: "#42a5f5" }} />,
+      code: `@font-face {
+  font-family: 'MiFuentePersonalizada';
+  src: url('../public/fonts/CoffeCake.otf');
+}
+  
+body {
+  font-family: 'MiFuentePersonalizada', sans-serif;
+}
+`,
+    },
+  },
+
+  ScrollBar: {
+    css: {
+      title: "App.css",
+      icon: <FaCss3 style={{ color: "#42a5f5" }} />,
+      code: `::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background-color: rgb(136, 89, 156);
+  border: solid 2px black;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  border: solid 2px black;
+  background-color: rgb(55, 137, 44);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(76, 190, 60);
+}
+`,
+    },
+  },
+
+  Responsive: {
+    css: {
+      title: "App.css",
+      icon: <FaCss3 style={{ color: "#42a5f5" }} />,
+      code: `@media screen and (max-width: 1440px)  {
+
+}
+
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 768px) /* Tablet */ {
+
+}
+
+@media screen and (max-width: 425px) /* Movil */ {
+
+}
+
+@media screen and (max-width: 375px) /* Movil */ {
+
+}
+
+@media screen and (max-width: 320px) /* Movil */ {
+
+}
+`,
+    },
+  },
+
+  MagickCrearWebpPNG: {
+    consola: {
+      title: "Consola VSCode",
+      icon: <VscDebugConsole style={{ color: "#f9a825" }} />,
+      code: `magick mogrify -format webp *.png
+      `,
+    },
+  },
+  MagickCrearWebpJPG: {
+    consola: {
+      title: "Consola VSCode",
+      icon: <VscDebugConsole style={{ color: "#f9a825" }} />,
+      code: `magick mogrify -format webp *.jpg
+      `,
+    },
+  },
+  MagickCrearWebpJPEG: {
+    consola: {
+      title: "Consola VSCode",
+      icon: <VscDebugConsole style={{ color: "#f9a825" }} />,
+      code: `magick mogrify -format webp *.jpeg
+      `,
+    },
+  },
+  MagickEliminarIMGPNG: {
+    consola: {
+      title: "Consola VSCode",
+      icon: <VscDebugConsole style={{ color: "#f9a825" }} />,
+      code: `del *.png
+      `,
+    },
+  },
+  MagickEliminarIMGJPG: {
+    consola: {
+      title: "Consola VSCode",
+      icon: <VscDebugConsole style={{ color: "#f9a825" }} />,
+      code: `del *.jpg
+      `,
+    },
+  },
+  MagickEliminarIMGJPEG: {
+    consola: {
+      title: "Consola VSCode",
+      icon: <VscDebugConsole style={{ color: "#f9a825" }} />,
+      code: `del *.jpeg
+      `,
+    },
+  },
+
+  PowerToysQuitarNumerologia: {
+    consola: {
+      title: "Consola VSCode",
+      icon: <VscDebugConsole style={{ color: "#f9a825" }} />,
+      code: `^\\d+\\s-\\s
+      `,
+    },
+  },
+
+  PowerToysCrearNumerologia: {
+    consola: {
+      title: "Consola VSCode",
+      icon: <VscDebugConsole style={{ color: "#f9a825" }} />,
+      code: `\${start=1} - 
+      `,
+    },
+  },
+
+  PowerToysCQuitarNumerologiaRepetida: {
+    consola: {
+      title: "Consola VSCode",
+      icon: <VscDebugConsole style={{ color: "#f9a825" }} />,
+      code: `\\s*\\(\\d+\\)\\s* 
+      `,
+    },
+  },
+
   Ejemplo1: {
     js: {
       title: "App.js",

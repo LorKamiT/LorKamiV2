@@ -11,13 +11,15 @@ import { MdPlayArrow } from "react-icons/md";
 import InicioH from "../Inicio";
 import Galeria from "../Galeria";
 import GuiasH from "../Guias";
+import FichasH from "../Fichas";
 import ReproductorMusicah from "../ReproductorMusica/ReproductorMusica";
 
 import LogoLK from "../../images/Menu/LogoLK.webp";
-import ImagenCambianteDefault from "../../images/Menu/ImagenCambianteDefault.webp";
+import ImagenCambianteDefault from "../../images/Menu/MenuGaleria.webp";
 import MenuInicio from "../../images/Menu/MenuInicio.webp";
 import MenuGaleria from "../../images/Menu/MenuGaleria.webp";
-import MenuGuias from "../../images/Menu/MenuGaleria.webp";
+import MenuGuias from "../../images/Menu/MenuInicio.webp";
+import MenuFichas from "../../images/Menu/MenuInicio.webp";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -266,12 +268,12 @@ const Menu = () => {
               </div>
             </Link>
             <Link
-              onMouseEnter={() => handleMouseEnter(MenuGaleria)}
+              onMouseEnter={() => handleMouseEnter(MenuFichas)}
               onMouseLeave={handleMouseLeave}
             >
               <div
                 className="MenuIndice"
-                onClick={() => handleComponentChange(Galeria)}
+                onClick={() => handleComponentChange(FichasH)}
               >
                 <span className="AnimSube">Fichas</span>
                 <span className="AnimBaja">Fichas</span>
@@ -294,12 +296,22 @@ const Menu = () => {
                 <span>Mapa interactivo</span>
               </div>
             </Link>
-            <Link>
-              <div
-                className="MenuIndiceSecu"
-                onClick={() => handleComponentChange(Galeria)}
-              >
+            <Link
+              to="https://lorkami.vercel.app/Windows"
+              target="_blank"
+              rel="noreferer"
+            >
+              <div className="MenuIndiceSecu">
                 <span>Proyecto Windows</span>
+              </div>
+            </Link>
+            <Link
+              to="https://lorkami.vercel.app/"
+              target="_blank"
+              rel="noreferer"
+            >
+              <div className="MenuIndiceSecu">
+                <span>Pagina LorKami V1</span>
               </div>
             </Link>
             <Link>

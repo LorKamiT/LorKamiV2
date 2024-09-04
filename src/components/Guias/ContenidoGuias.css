@@ -121,16 +121,13 @@
 
 .Caja-Advertencia {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   width: 90%;
-  height: auto;
-  padding: 0rem;
+  padding: 0px 10px;
   font-size: 0.8rem;
   font-weight: 600;
-  padding: 0px 10px;
-  gap: 4px;
+  gap: 8px;
 }
 
 .Verde {
@@ -198,10 +195,15 @@
   color: #de3d32;
 }
 
+.Caja-Advertencia p {
+  line-height: 1.4;
+}
+
 .Caja-Advertencia svg {
-  padding: 0px 4px;
   width: 1.5rem;
   height: 1.5rem;
+  flex-shrink: 0;
+  padding-right: 4px;
 }
 
 .Caja-Descarga {

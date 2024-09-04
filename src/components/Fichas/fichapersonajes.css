@@ -1,0 +1,114 @@
+.Fichas-Caja {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  width: 100%;
+  /* border: 1px solid yellow; */
+}
+
+.Fichas-Contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  gap: 20px;
+}
+
+.Ficha-Card {
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  color: black;
+  overflow: hidden;
+  min-width: 300px;
+  transition: all 0.3s ease;
+}
+
+.Ficha-Card.dark {
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.Ficha-Card.expanded {
+  width: 100%;
+  height: auto;
+}
+
+.Ficha-Imagen {
+  height: 200px;
+  background-size: cover;
+}
+
+.Ficha-Imagen.expanded {
+  height: 600px;
+  background-size: cover;
+}
+
+.Ficha-Contenido {
+  padding: 15px;
+}
+
+.Ficha-Contenido h3 {
+  margin-top: 0;
+}
+
+.Btn-LeerMas {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Btn-LeerMas .btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
+  background-color: #1871cc;
+  border: 0px;
+  padding: 15px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.Btn-LeerMas .btn:hover {
+  background-color: #1258a8;
+}
+
+.Btn-LeerMas.dark .btn {
+  color: #091520;
+  background-color: #82c3f8;
+}
+
+.Btn-LeerMas.dark .btn:hover {
+  background-color: #42a5f5;
+}
+
+@media screen and (max-width: 1440px) {
+  .Fichas-Contenedor {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 425px) {
+  .Ficha-Imagen.expanded {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+}
+
+@media screen and (max-width: 320px) {
+}
