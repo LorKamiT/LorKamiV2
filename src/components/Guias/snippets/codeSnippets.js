@@ -188,6 +188,7 @@ Set-ExecutionPolicy -ExecutionPolicy Restricted -Scope CurrentUser
       code: `Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 vercel --prod
 Set-ExecutionPolicy -ExecutionPolicy Restricted -Scope CurrentUser
+
 `,
     },
   },

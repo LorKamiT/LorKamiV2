@@ -105,10 +105,10 @@ export const radiosdata = [
     url: "https://streamer.radio.co/s2c3cc784b/listen",
   },
   {
-    title: "Energy - Pop",
-    artist: "Rusia",
+    title: "Energy - 90s",
+    artist: "Bulgaria",
     musicimage: "https://i.imgur.com/YsfG3pa.png",
-    url: "http://stream.radioreklama.bg/nrj.ogg",
+    url: "https://25583.live.streamtheworld.com/RADIO_ENERGYAAC_L.aac?dist=DESKTOP",
   },
   {
     title: "Rock Panzer",
