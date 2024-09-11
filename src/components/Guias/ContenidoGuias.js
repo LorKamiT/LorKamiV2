@@ -270,6 +270,11 @@ const ContenidoGuias = ({ darkMode }) => {
                 - npm i react-icons --save (Para usar los iconos de toda la
                 vida)
               </p>
+              <p>
+                - npm install -D prettier prettier-plugin-tailwindcss (Para que
+                el plugin Prettier formatee nuestro codigo de Tailwind, y lo
+                deje ordenado.)
+              </p>
               <CodeBox id="InstalarDependenciasNextJS" darkMode={darkMode} />
             </div>
           </div>
