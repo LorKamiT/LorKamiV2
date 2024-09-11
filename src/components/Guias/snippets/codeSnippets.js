@@ -75,7 +75,7 @@ export default App;`,
       code: `npm i next-themes
 npm i clsx
 npm i react-icons --save
-npm install -D prettier prettier-plugin-tailwindcss
+npm i -D prettier prettier-plugin-tailwindcss
       `,
     },
   },
