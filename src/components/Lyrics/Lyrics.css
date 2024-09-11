@@ -1,0 +1,201 @@
+.Letras-Caja {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-bottom: 80px;
+}
+
+.LetrasMonitor {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.Letras-Video {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+  padding-top: 1rem;
+}
+
+.Letras-Video iframe {
+  position: sticky;
+  display: flex;
+  width: 100%;
+  transform: translateY(-50%);
+  top: calc(50% - 270px);
+}
+
+.Letras-Controlador {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  height: 100%;
+  margin-top: 1rem;
+}
+
+.Letras-InfoSuperior {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  max-height: 250px;
+}
+
+.Letras-SelectorIzquierdo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  gap: 8px;
+}
+
+.Letras-SelectorIzquierdo p {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin: 0;
+  color: #000000;
+}
+
+.dark .Letras-SelectorIzquierdo p {
+  color: #ffffff;
+}
+
+.Letras-InformaciónDerecha {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 8px;
+}
+
+.Letras-InfoCancion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 80%;
+  height: 100%;
+}
+
+.Letras-InfoCancion p {
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.dark .Letras-InfoCancion p {
+  color: #e6e6e6;
+}
+
+.Letras-ImagenCancion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 100%;
+}
+
+.Letras-ImagenCancion img {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  max-width: 7rem;
+}
+
+.Letras-LectorTexto {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.Letras-LectorTexto p {
+  color: #000000;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.dark .Letras-LectorTexto p {
+  color: #949ba4;
+}
+
+.Letras-Selector {
+  background-color: transparent;
+  color: #000000;
+  width: 15rem;
+  height: 2rem;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  appearance: none;
+  border: 1px solid black;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #949ba4 50%),
+    linear-gradient(135deg, #949ba4 50%, transparent 50%);
+  background-position: calc(100% - 1rem) calc(1rem / 1.5),
+    calc(100% - 0.5rem) calc(1rem / 1.5);
+  background-size: 0.5rem 0.5rem, 0.5rem 0.5rem;
+  background-repeat: no-repeat;
+  transition: background-position 0.3s, color 0.3s;
+  outline: none;
+}
+
+.dark .Letras-Selector {
+  background-color: #2b2d31;
+  color: #949ba4;
+}
+
+@media screen and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 1024px) {
+  .Letras-Caja {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) /* Tablet */ {
+  .LetrasMonitor {
+    align-items: center;
+    flex-direction: column;
+  }
+  .Letras-Video {
+    width: 50%;
+  }
+  .Letras-Video iframe {
+    position: relative;
+    display: flex;
+    width: 100%;
+    transform: translateY(0%);
+    top: calc(0%);
+  }
+  .Letras-Controlador {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 425px) /* Movil */ {
+  .Letras-InformaciónDerecha {
+    display: none;
+  }
+  .Letras-Video {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 375px) /* Movil */ {
+}
+
+@media screen and (max-width: 320px) /* Movil */ {
+}

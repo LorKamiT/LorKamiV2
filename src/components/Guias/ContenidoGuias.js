@@ -222,6 +222,61 @@ const ContenidoGuias = ({ darkMode }) => {
           <div className={`timeline-item ${darkMode ? "dark" : ""}`}>
             <div className={`timeline-icon ${darkMode ? "dark" : ""}`}>3</div>
             <div className={`timeline-content ${darkMode ? "dark" : ""}`}>
+              <h3>Base pre fabricada para NextJS + Tailwind</h3>
+              <p>
+                He modificado varios archivos de NextJS para un inicio mas
+                rapido
+              </p>
+              <p>- Eliminar la carpeta "src"</p>
+              <p>- Eliminar el archivo "tailwind.config.ts"</p>
+              <p>
+                Descargar el siguente rar para aplicar los archivos modificados
+                para iniciar rapido.
+              </p>
+              <div className={`Caja-Descarga ${darkMode ? "dark" : ""}`}>
+                <a
+                  href="/descargas/Base-inicial-para-NextJS-Tailwind.rar"
+                  download
+                >
+                  <button>
+                    <FaCloudArrowDown /> DESCARGAR ARCHIVOS
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className={`timeline-item ${darkMode ? "dark" : ""}`}>
+            <div className={`timeline-icon ${darkMode ? "dark" : ""}`}>4</div>
+            <div className={`timeline-content ${darkMode ? "dark" : ""}`}>
+              <h3>Instalar dependencias para la base de NextJS</h3>
+              <div
+                className={`Caja-Advertencia Amarillo ${
+                  darkMode ? "dark" : ""
+                }`}
+              >
+                <RiErrorWarningLine />
+                <p>
+                  Este paso es importante para que funcione la base
+                  correctamente
+                </p>
+              </div>
+              <p>
+                - npm i next-themes (Para el uso del tema dark y light para la
+                pagina)
+              </p>
+              <p>- npm i clsx (npi pero es necesario)</p>
+              <p>
+                - npm i react-icons --save (Para usar los iconos de toda la
+                vida)
+              </p>
+              <CodeBox id="InstalarDependenciasNextJS" darkMode={darkMode} />
+            </div>
+          </div>
+
+          <div className={`timeline-item ${darkMode ? "dark" : ""}`}>
+            <div className={`timeline-icon ${darkMode ? "dark" : ""}`}>5</div>
+            <div className={`timeline-content ${darkMode ? "dark" : ""}`}>
               <h3>Iniciar proyecto</h3>
               <p>Ahora, solo queda iniciar nuestro nuevo proyecto de NextJS</p>
               <CodeBox id="IniciarProyectoNextJS" darkMode={darkMode} />

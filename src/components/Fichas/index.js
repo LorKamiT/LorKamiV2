@@ -37,11 +37,11 @@ const Fichas = ({ darkMode }) => {
                   <strong>Plataforma:</strong> {ficha.plataforma}
                 </p>
                 <p>
-                  <strong>Edad:</strong> {ficha.edadActual}
+                  <strong>Apodo:</strong> {ficha.apodo}
                 </p>
 
                 <p>
-                  <strong>Apodo:</strong> {ficha.apodo}
+                  <strong>Edad:</strong> {ficha.edadActual}
                 </p>
 
                 {expandedIndex === index && (
@@ -49,16 +49,6 @@ const Fichas = ({ darkMode }) => {
                     <p>
                       <strong>Fecha de Nacimiento:</strong>{" "}
                       {ficha.fechaNacimiento}
-                    </p>
-                    <p>
-                      <strong>Lugar de Nacimiento:</strong>{" "}
-                      {ficha.lugarNacimiento}
-                    </p>
-                    <p>
-                      <strong>Estado Civil:</strong> {ficha.estadoCivil}
-                    </p>
-                    <p>
-                      <strong>Residencia:</strong> {ficha.residencia}
                     </p>
                     <p>
                       <strong>Altura:</strong> {ficha.altura}
@@ -79,14 +69,51 @@ const Fichas = ({ darkMode }) => {
                       <strong>Cicatrices:</strong> {ficha.cicatrices}
                     </p>
                     <p>
+                      <p>
+                        <strong>Lugar de Nacimiento:</strong>{" "}
+                        {ficha.lugarNacimiento}
+                      </p>
+                      <strong>Estado Civil:</strong> {ficha.estadoCivil}
+                    </p>
+                    <p>
+                      <strong>Residencia:</strong> {ficha.residencia}
+                    </p>
+                    <p>
                       <strong>Antecedentes Penales:</strong>{" "}
                       {ficha.antecedentesPenales}
                     </p>
-                    <p>
+                    <p className="Alineacion-Texto">
                       <strong>Historial Médico:</strong> {ficha.historialMedico}
                     </p>
-                    <p>
+                    <p className="Alineacion-Texto">
                       <strong>Estudios:</strong> {ficha.estudios}
+                    </p>
+                    <p className="Alineacion-Texto">
+                      <strong>Historia:</strong> {ficha.historia}
+                    </p>
+                    <p>
+                      <strong>Descripción psicologica:</strong>{" "}
+                      {ficha.descripcionPsicologica}
+                    </p>
+                    <p>
+                      <strong>Descripción fisica:</strong>{" "}
+                      {ficha.descripcionFisica}
+                    </p>
+                    <p>
+                      <strong>Aspiraciones:</strong> {ficha.aspiraciones}
+                    </p>
+                    <p>
+                      <strong>Defectos:</strong> {ficha.defectos}
+                    </p>
+                    <p>
+                      <strong>Virtudes:</strong> {ficha.virtudes}
+                    </p>
+                    <p>
+                      <strong>Miedos:</strong> {ficha.miedos}
+                    </p>
+                    <p>
+                      <strong>Gustos y aficiones:</strong>{" "}
+                      {ficha.gustosAficiones}
                     </p>
                   </>
                 )}

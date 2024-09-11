@@ -93,12 +93,12 @@
 .wave,
 .wave2,
 .wave3 {
-  width: 3px;
+  width: 2px;
   height: 20px;
   margin: 2px;
   background-color: #000;
   display: inline-block;
-  animation: waveAnimation 1.2s infinite ease-in-out;
+  animation: waveAnimation 0.7s infinite ease-in-out;
   animation-play-state: paused;
 }
 
@@ -109,18 +109,18 @@
 }
 
 .wave {
-  height: 15px;
-  animation-delay: -1.4s;
+  height: 18px;
+  animation-delay: -0.1s;
 }
 
 .wave2 {
   height: 20px;
-  animation-delay: -1.2s;
+  animation-delay: -0.2s;
 }
 
 .wave3 {
-  height: 25px;
-  animation-delay: -1s;
+  height: 20px;
+  animation-delay: -0.4s;
 }
 
 .wave.playing,
@@ -138,11 +138,19 @@
   100% {
     transform: scaleY(1);
   }
-  50% {
+  20% {
     transform: scaleY(1.3);
   }
+  40% {
+    transform: scaleY(1.1);
+  }
+  60% {
+    transform: scaleY(0.8);
+  }
+  80% {
+    transform: scaleY(0.9);
+  }
 }
-
 .containermusicapp {
   display: flex;
   flex-direction: column;

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Divide as Hamburger } from "hamburger-react";
 import { Switch } from "@mui/material";
 import { styled } from "@mui/system";
+import Skeleton from "@mui/material/Skeleton";
 
 import { MdPlayArrow } from "react-icons/md";
 
@@ -12,14 +13,15 @@ import InicioH from "../Inicio";
 import Galeria from "../Galeria";
 import GuiasH from "../Guias";
 import FichasH from "../Fichas";
+import LyricsH from "../Lyrics";
 import ReproductorMusicah from "../ReproductorMusica/ReproductorMusica";
 
 import LogoLK from "../../images/Menu/LogoLK.webp";
-import ImagenCambianteDefault from "../../images/Menu/MenuGaleria.webp";
+import ImagenCambianteDefault from "../../images/Menu/MenuInicio.webp";
 import MenuInicio from "../../images/Menu/MenuInicio.webp";
 import MenuGaleria from "../../images/Menu/MenuGaleria.webp";
-import MenuGuias from "../../images/Menu/MenuInicio.webp";
-import MenuFichas from "../../images/Menu/MenuInicio.webp";
+import MenuGuias from "../../images/Menu/MenuGuias.webp";
+import MenuFichas from "../../images/Menu/MenuFichas.webp";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -149,14 +151,22 @@ const Menu = () => {
     });
   }, [darkMode]);
 
-  // Imagen Cambiante
+  // Imagen Cambiante con Skeleton
   const [changingImage, setChangingImage] = useState(ImagenCambianteDefault);
+  const [loading, setLoading] = useState(true);
+
   const handleMouseEnter = (image) => {
-    setChangingImage(image);
+    setLoading(true);
+    const img = new Image();
+    img.src = image;
+    img.onload = () => {
+      setChangingImage(image);
+      setLoading(false);
+    };
   };
 
   const handleMouseLeave = () => {
-    setChangingImage(ImagenCambianteDefault); // Imagen por defecto
+    setChangingImage(ImagenCambianteDefault);
   };
 
   // Hamburguesa
@@ -283,7 +293,7 @@ const Menu = () => {
             <Link>
               <div
                 className="MenuIndiceSecu"
-                onClick={() => handleComponentChange(Galeria)}
+                onClick={() => handleComponentChange(LyricsH)}
               >
                 <span>Lyrics</span>
               </div>
@@ -324,7 +334,16 @@ const Menu = () => {
             </Link>
           </div>
           <div className="MenuImagenCambiante">
-            <img src={changingImage} alt="Imagen de Reproductor" />
+            {loading ? (
+              <Skeleton
+                variant="rounded"
+                animation="wave"
+                width={"100%"}
+                height={"100vh"}
+              />
+            ) : (
+              <img src={changingImage} alt="Imagen de Reproductor" />
+            )}
           </div>
         </div>
 

@@ -27,12 +27,12 @@ export const fichapersonajes = [
     Eventos significativos: En 1888, la destitución de Otto von Bismarck y la creciente oposición al Kaiser Guillermo II crearon una atmósfera de tensión política en Alemania. Gunter, con su carácter impulsivo y naturaleza rebelde, no pudo quedarse callado y comenzó a expresar abiertamente su descontento con el régimen. Sus opiniones políticas pronto le trajeron problemas, y decidió junto a sus padres que lo mejor sería emigrar para evitar represalias.
     Emigración y tragedia: En 1890, Gunter y sus padres tomaron la difícil decisión de abandonar Alemania y buscar una nueva vida en América. Embarcaron en un barco con destino a Saint Denis, un puerto prometedor donde esperaban encontrar nuevas oportunidades. Durante la travesía, las duras condiciones del viaje, la escasez de alimentos y las malas condiciones higiénicas hicieron estragos en los pasajeros. Heinrich y Marta, debilitados por la malnutrición, sucumbieron a una infección antes de llegar al puerto de Saint Denis. Gunter, devastado por la pérdida de sus padres, se encontró solo en una tierra desconocida.
     Presente: En 1890, Gunter Bach es un hombre marcado por la tragedia y las pérdidas, pero también por una inquebrantable voluntad de sobrevivir. Aunque su naturaleza un poco imbécil y su tendencia a hablar sin pensar todavía le crean problemas, ha aprendido a ser más cauteloso y a valorar las relaciones que va construyendo.`,
-    descripcionPsicologica: `--`,
-    descripcionFisica: `--`,
-    aspiraciones: `--`,
-    defectos: `--`,
-    virtudes: `--`,
-    miedos: `--`,
+    descripcionPsicologica: ``,
+    descripcionFisica: ``,
+    aspiraciones: ``,
+    defectos: ``,
+    virtudes: ``,
+    miedos: ``,
     gustosAficiones: ``,
   },
   {

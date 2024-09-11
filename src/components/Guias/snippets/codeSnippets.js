@@ -68,6 +68,17 @@ export default App;`,
     },
   },
 
+  InstalarDependenciasNextJS: {
+    consola: {
+      title: "Consola VSCode",
+      icon: <VscDebugConsole style={{ color: "#f6f7f8" }} />,
+      code: `npm i next-themes
+npm i clsx
+npm i react-icons --save
+      `,
+    },
+  },
+
   IniciarProyectoNextJS: {
     consola: {
       title: "Consola VSCode",
